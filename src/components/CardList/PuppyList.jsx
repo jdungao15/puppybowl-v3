@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import Puppy from "../Card/Puppy";
 const PuppyList = ({ puppies }) => {
-  console.log(puppies);
   return (
     <div>
       {puppies.map((puppy) => {
