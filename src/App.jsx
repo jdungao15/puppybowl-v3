@@ -3,8 +3,10 @@ import axios from "axios";
 import PuppyList from "./components/CardList/PuppyList";
 import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
+import NewPlayerForm from "./components/NewPlayerForm/NewPlayerForm";
 
 function App() {
+  //States
   const [puppies, setPuppies] = useState([]);
   const [searchPuppy, setSearchPuppy] = useState("");
 
@@ -12,6 +14,7 @@ function App() {
     setSearchPuppy(e.target.value);
   };
 
+  //Retrieve puppy data from API
   useEffect(() => {
     const getPuppyData = async () => {
       try {
@@ -35,7 +38,8 @@ function App() {
   return (
     <>
       <SearchBar searchPuppyHandler={searchPuppyHandler}></SearchBar>
-      <PuppyList puppies={filteredPuppies}></PuppyList>
+      {/* <PuppyList puppies={filteredPuppies}></PuppyList> */}
+      <NewPlayerForm></NewPlayerForm>
     </>
   );
 }
