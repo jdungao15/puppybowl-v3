@@ -10,23 +10,24 @@ function App() {
   const [puppies, setPuppies] = useState([]);
   const [searchPuppy, setSearchPuppy] = useState("");
 
+  //Search Handler
   const searchPuppyHandler = (e) => {
     setSearchPuppy(e.target.value);
+  };
+  const getPuppyData = async () => {
+    try {
+      const response = await axios.get(
+        "https://fsa-puppy-bowl.herokuapp.com/api/2308-acc-et-web-pt-b/players"
+      );
+      const { players } = response.data.data;
+      setPuppies(players);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   //Retrieve puppy data from API
   useEffect(() => {
-    const getPuppyData = async () => {
-      try {
-        const response = await axios.get(
-          "https://fsa-puppy-bowl.herokuapp.com/api/2308-acc-et-web-pt-b/players"
-        );
-        const { players } = response.data.data;
-        setPuppies(players);
-      } catch (err) {
-        console.error(err);
-      }
-    };
     getPuppyData();
   }, []);
 
@@ -38,8 +39,8 @@ function App() {
   return (
     <>
       <SearchBar searchPuppyHandler={searchPuppyHandler}></SearchBar>
-      {/* <PuppyList puppies={filteredPuppies}></PuppyList> */}
-      <NewPlayerForm></NewPlayerForm>
+      <PuppyList puppies={filteredPuppies}></PuppyList>
+      <NewPlayerForm getPuppyData={getPuppyData}></NewPlayerForm>
     </>
   );
 }
