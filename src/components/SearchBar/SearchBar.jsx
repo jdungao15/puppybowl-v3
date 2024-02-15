@@ -1,6 +1,6 @@
 const SearchBar = ({ searchPuppyHandler }) => {
   return (
-    <div className="container">
+    <div className="">
       <input
         onChange={searchPuppyHandler}
         type="text"

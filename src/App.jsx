@@ -37,11 +37,11 @@ function App() {
   );
 
   return (
-    <>
+    <div className="bg-amber-50">
       <SearchBar searchPuppyHandler={searchPuppyHandler}></SearchBar>
       <PuppyList puppies={filteredPuppies}></PuppyList>
       <NewPlayerForm getPuppyData={getPuppyData}></NewPlayerForm>
-    </>
+    </div>
   );
 }
 

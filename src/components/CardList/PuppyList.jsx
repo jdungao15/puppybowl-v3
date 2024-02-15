@@ -5,9 +5,9 @@ const PuppyList = ({ puppies }) => {
       {puppies.map((puppy) => {
         return (
           <div className="mx-auto marker:basis-auto" key={puppy.id}>
-            <h1 className="text-2xl">{puppy.name}</h1>
+            <h1 className="text-2xl text-center">{puppy.name}</h1>
             <img
-              className="size-96 rounded-3xl shadow-xl"
+              className="size-96 rounded-3xl shadow-2x hover:scale-110 duration-500"
               src={puppy.imageUrl}
               name={puppy.name}
             ></img>
