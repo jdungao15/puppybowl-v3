@@ -14,6 +14,13 @@ function App() {
   const searchPuppyHandler = (e) => {
     setSearchPuppy(e.target.value);
   };
+
+  //Delete Handler
+  const deletePuppyHandler = (e) => {
+    console.log(e.target.id);
+  };
+
+  // call api function
   const getPuppyData = async () => {
     try {
       const response = await axios.get(
@@ -39,7 +46,10 @@ function App() {
   return (
     <div className="bg-amber-50">
       <SearchBar searchPuppyHandler={searchPuppyHandler}></SearchBar>
-      <PuppyList puppies={filteredPuppies}></PuppyList>
+      <PuppyList
+        deletePuppy={deletePuppyHandler}
+        puppies={filteredPuppies}
+      ></PuppyList>
       <NewPlayerForm getPuppyData={getPuppyData}></NewPlayerForm>
     </div>
   );
