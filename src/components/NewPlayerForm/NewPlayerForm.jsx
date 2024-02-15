@@ -52,7 +52,7 @@ const NewPlayerForm = ({ getPuppyData }) => {
         <label>
           Age: <input onChange={handleChange} type="number" name="age" />
         </label>
-        <input type="submit" value="Submit" />
+        <input className="text-lg" type="submit" value="Submit" />
       </form>
     </div>
   );

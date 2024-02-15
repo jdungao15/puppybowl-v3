@@ -28,7 +28,7 @@ const Puppy = () => {
       {puppy && ( // Check if puppy is available before rendering
         <div>
           <img src={puppy.imageUrl} alt={puppy.name} />
-          <h1>{puppy.name}</h1>
+          <h1 className="">{puppy.name}</h1>
           <h2>{puppy.status}</h2>
           <h3>{puppy.breed}</h3>
         </div>

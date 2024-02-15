@@ -1,7 +1,11 @@
 const SearchBar = ({ searchPuppyHandler }) => {
   return (
-    <div>
-      <input onChange={searchPuppyHandler}type="text" placeholder="Search a dog..." />
+    <div className="container">
+      <input
+        onChange={searchPuppyHandler}
+        type="text"
+        placeholder="Search a dog..."
+      />
     </div>
   );
 };
