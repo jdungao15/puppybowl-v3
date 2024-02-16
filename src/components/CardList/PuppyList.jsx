@@ -13,12 +13,12 @@ const PuppyList = ({ puppies, deletePuppy }) => {
             ></img>
             <div className="flex justify-between">
               <Link to={`/players/${puppy.id}`}>
-                <button className="bg-amber-300 hover:bg-amber-400 text-white font-bold py-1 px-2 my-4 rounded">
+                <button className="bg-amber-200 hover:bg-amber-300 text-black font-bold py-1 px-2 my-4 rounded">
                   See More
                 </button>
               </Link>
               <button
-                className="text-white py-1 px-2 my-4 rounded bg-amber-500"
+                className="text-black py-1 px-2 my-4 rounded bg-amber-400 hover:bg-amber-500"
                 id={puppy.id}
                 onClick={deletePuppy}
               >
