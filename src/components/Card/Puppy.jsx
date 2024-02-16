@@ -28,6 +28,7 @@ const Puppy = () => {
         );
         const { player } = response.data.data;
         //Get random name from API and add the player data
+        console.log(player);
         const newObj = { ...player, owner: await randomName() };
         setPuppy(newObj);
       } catch (err) {
@@ -50,10 +51,19 @@ const Puppy = () => {
                 {puppy.name}
               </h1>
               <p className="ml-4 mt-1 mb-2 text-gray-700 hover:underline">
-                {puppy.breed}
+                <span className="font-medium">Breed:</span> {puppy.breed}
               </p>
               <p className="ml-4 mt-1 mb-2 text-gray-700 hover:underline">
+                <span className="font-medium">Status: </span>
                 {puppy.status}
+              </p>
+              <p className="ml-4 mt-1 mb-2 text-gray-700 hover:underline">
+                <span className="font-medium">Cohort ID: </span>
+                {puppy.cohortId}
+              </p>
+              <p className="ml-4 mt-1 mb-2 text-gray-700 hover:underline">
+                <span className="font-medium">Team ID: </span>
+                {puppy.teamId}
               </p>
             </div>
             <img
