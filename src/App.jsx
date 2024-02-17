@@ -52,11 +52,13 @@ function App() {
   return (
     <div className="bg-amber-50 font-riot font-extralight">
       <Nav searchPuppyHandler={searchPuppyHandler}></Nav>
+      <div className="w-3/4 m-auto">
+        <PuppyList
+          deletePuppy={deletePuppyHandler}
+          puppies={filteredPuppies}
+        ></PuppyList>
+      </div>
 
-      <PuppyList
-        deletePuppy={deletePuppyHandler}
-        puppies={filteredPuppies}
-      ></PuppyList>
       <div id="puppy-form">
         <NewPlayerForm getPuppyData={getPuppyData}></NewPlayerForm>
       </div>
