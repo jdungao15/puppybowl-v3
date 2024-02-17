@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 import "./Puppy.css";
 
 const Puppy = () => {
@@ -44,9 +44,11 @@ const Puppy = () => {
         <div className="min-h-screen bg-amber-100 flex justify-center items-center">
           <div className="max-w-xs container bg-amber-200 rounded-xl shadow-lg transform transition duration-500 hover:scale-125 hover:shadow-2xl">
             <div>
-              <span className="text-white text-xs font-bold rounded-lg bg-amber-500 inline-block mt-4 ml-4 py-1.5 px-4 cursor-pointer">
-                Home
-              </span>
+              <Link to="/">
+                <span className="text-white text-xs font-bold rounded-lg bg-amber-500 inline-block mt-4 ml-4 py-1.5 px-4 cursor-pointer">
+                  Home
+                </span>
+              </Link>
               <h1 className="text-2xl mt-2 ml-4 font-bold text-gray-800 cursor-pointer hover:text-gray-900 transition duration-100">
                 {puppy.name}
               </h1>

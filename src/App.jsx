@@ -57,7 +57,9 @@ function App() {
         deletePuppy={deletePuppyHandler}
         puppies={filteredPuppies}
       ></PuppyList>
-      <NewPlayerForm getPuppyData={getPuppyData}></NewPlayerForm>
+      <div id="puppy-form">
+        <NewPlayerForm getPuppyData={getPuppyData}></NewPlayerForm>
+      </div>
     </div>
   );
 }
